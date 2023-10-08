@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darcy Douglas | Start</title>
     <link rel="stylesheet" href="styles/start.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div class="video-container">
+        <div class="overlay-text">
+            <h1 id="main-heading">Hi, I'm Darcy Douglas</h1>
+            <h2 id="sub-heading">product person, builder & adventurer</h2>
+        </div>
+        
         <video muted id = "home_space_jump">
             <source src="video/home_space_jump.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -15,31 +21,29 @@
     </div>
 
     <button id="video_start_button">Start</button>
+
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var video = document.getElementById("home_space_jump");
-        var playButton = document.getElementById("video_start_button");
-
-        function playVideo() {
-            video.play();
-        }
-
-        playButton.addEventListener('click', playVideo);
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var video = document.getElementById("home_space_jump");
-        var playButton = document.getElementById("video_start_button");
-
-        function playVideo() {
-            video.play();
-        }
-
-        playButton.addEventListener('click', playVideo);
-    });
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById("home_space_jump");
+            var playButton = document.getElementById("video_start_button");
+            var mainHeading = document.getElementById("main-heading");
+            var subHeading = document.getElementById("sub-heading");
+        
+            function playVideo() {
+                video.play();
+                mainHeading.style.display = 'none';  // Hide main heading
+                subHeading.style.display = 'none';   // Hide sub heading
+                playButton.style.display = 'none';   // Hide start button
+            }
+        
+            function navigateToHome() {
+                window.location.href = 'pages/home.html';  // Navigate to home.html when video ends
+            }
+        
+            playButton.addEventListener('click', playVideo);
+            video.addEventListener('ended', navigateToHome);  // Add event listener for when the video ends
+        });
+    </script>
 
 </body>
 </html>

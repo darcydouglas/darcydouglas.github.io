@@ -43,3 +43,28 @@ body, html {
 #video_start_button:hover {
     background-color: #555;
 }
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 5;
+}
+
+#main-heading, #sub-heading {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+#main-heading {
+    font-weight: 700;
+    font-size: 55px;
+    margin-bottom: 0.5em;
+}
+
+#sub-heading {
+    font-weight: 400;
+    font-size: 25px;
+}
