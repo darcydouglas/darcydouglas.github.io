@@ -9,48 +9,90 @@ body, html {
     background-repeat: no-repeat;
 }
 
-/* Styling for the star button V1 */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-image: url('../images/home_background.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.north_star_button {
+/* Common styling for the southern cross buttons */
+.southern_cross_buttons {
     background-color: transparent;
     border: none;
     cursor: pointer;
     transition: transform 0.2s;
     position: absolute;
-    left: calc(100vw / 3 - 25px); /* Subtract half of the button's width to center it */
-    top: calc(20vh - 25px); /* Subtract half of the button's height to center it */
+    left: 10%; /* Place the stars on the left */
     background-image: url('../images/north_star.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 250px; 
+    width: 250px;
     height: 250px;
     display: inline-block;
 }
 
-.north_star_button:hover {
+#projects {
+    background-image: url('../images/alt_star.png');
+    top: 60%;
+    left: 15%; /* Adjusted from 10% to 15% */
+}
+
+#my_north_star {
+    top: 10%;
+    left: 15%; /* Adjusted from 10% to 15% */
+}
+
+#resources {
+    background-image: url('../images/alt_star.png');
+    width: 200px; 
+    height: 200px;
+    top: 30%;
+    left: 25%; /* Adjusted from 20% to 25% */
+}
+
+#essays {
+    background-image: url('../images/alt_star.png');
+    width: 220px; 
+    height: 220px;
+    top: 35%;
+    left: 5%; /* Adjusted from 0% to 5% */
+}
+
+#x-twitter {
+    background-image: url('../images/socials_star.png');
+    width: 150px; 
+    height: 150px;
+    top: 50%; 
+    left: 23%; /* Adjusted from 17.5% to 22.5% */
+}
+
+#linkedin {
+    background-image: url('../images/socials_star.png');
+    width: 150px; 
+    height: 150px;
+    top: 58%; 
+    left: 33%; /* Adjusted from 17.5% to 22.5% */
+}
+
+#github {
+    background-image: url('../images/socials_star.png');
+    width: 150px; 
+    height: 150px;
+    top: 66%; 
+    left: 43%; /* Adjusted from 17.5% to 22.5% */
+}
+
+
+/* Twinkle and Tooltip effects remain the same for all stars */
+.southern_cross_buttons:hover {
     /* Twinkle Effect */
-    transform: scale(1.1); 
+    transform: scale(1.1);
     animation: twinkle 1s alternate infinite;
 }
 
 /* Tooltip - Displaying the name of the button */
-.north_star_button:hover::after {
+.southern_cross_buttons:hover::after {
     content: attr(aria-label);
     position: absolute;
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
     color: #ffffff;
     padding: 5px 10px;
     border-radius: 5px;
@@ -58,13 +100,53 @@ body, html {
     font-family: 'Poppins', sans-serif;
     font-weight: 500; /* Using the light weight for a sleek look */
     font-size: 18px;
-    letter-spacing: 2px; /* Spacing out the letters */ 
+    letter-spacing: 2px; /* Spacing out the letters */
 }
 
+/* Styling for the "About Me" button */
+.about_me_button {
+    background-color: transparent;
+    background-image: url('../images/about_me_photo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 600px;  /* Adjust width and height based on the size of your image */
+    height: 600px;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.3s;
+    position: absolute;  /* Positions the button relative to the nearest positioned ancestor (in this case, the body) */
+    right: 20%;            /* Aligns the button to the right side */
+    top: 40%;            /* Centers the button vertically */
+    transform: translateY(-50%); /* Adjusts the vertical centering */
+}
 
-/* Animation - Twinkle */
+/* Make the image reactive upon hover by darkening it */
+.about_me_button:hover {
+    background-color: transparent; 
+    filter: brightness(0.7);
+}
+
+/* Display the "About Me" text on hover */
+.about_me_button:hover::after {
+    content: "About Me";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centers the text */
+    color: white;  /* Text color */
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 500; 
+}
+
+/* Animation - Subtle Twinkle Effect */
 @keyframes twinkle {
-    0% { opacity: 1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 1; }
+    0%   { opacity: 1; transform: scale(1); }
+    25%  { opacity: 0.8; transform: scale(1.02); }
+    50%  { opacity: 0.9; transform: scale(1.04); }
+    75%  { opacity: 0.8; transform: scale(1.02); }
+    100% { opacity: 1; transform: scale(1); }
 }
+
+

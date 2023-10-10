@@ -1,0 +1,18 @@
+body {
+    background-image: url('../images/home_background.png'); /* Adjust the path based on your directory structure */
+    background-size: cover; /* This will make sure the image covers the entire viewport */
+    background-position: center center; /* This will center the image */
+    background-repeat: no-repeat; /* This will prevent the image from repeating */
+    background-attachment: fixed; /* This will make sure the background stays fixed while scrolling */
+}
+
+.coming-soon {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text both vertically and horizontally */
+    text-align: center;
+}
