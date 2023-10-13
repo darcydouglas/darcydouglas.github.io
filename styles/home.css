@@ -30,11 +30,21 @@ body, html {
     background-image: url('../images/alt_star.png');
     top: 60%;
     left: 15%; /* Adjusted from 10% to 15% */
+    animation: twinkle 3s forwards; /* Play the twinkle effect once upon page load */
+}
+
+#projects:hover {
+    animation: twinkle 1s alternate infinite;
 }
 
 #my_north_star {
     top: 10%;
     left: 15%; /* Adjusted from 10% to 15% */
+    animation: twinkle 3s forwards; /* Play the twinkle effect once upon page load */
+}
+
+#my_north_star:hover {
+    animation: twinkle 1s alternate infinite;
 }
 
 #resources {
@@ -43,6 +53,11 @@ body, html {
     height: 200px;
     top: 30%;
     left: 25%; /* Adjusted from 20% to 25% */
+    animation: twinkle 3s forwards; /* Play the twinkle effect once upon page load */
+}
+
+#resources:hover {
+    animation: twinkle 1s alternate infinite;
 }
 
 #essays {
@@ -51,6 +66,11 @@ body, html {
     height: 220px;
     top: 35%;
     left: 5%; /* Adjusted from 0% to 5% */
+    animation: twinkle 3s forwards; /* Play the twinkle effect once upon page load */
+}
+
+#essays:hover {
+    animation: twinkle 1s alternate infinite;
 }
 
 #x-twitter {
