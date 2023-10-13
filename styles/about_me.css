@@ -16,3 +16,50 @@ body {
     transform: translate(-50%, -50%); /* Center the text both vertically and horizontally */
     text-align: center;
 }
+/* Common styling for the home buttons */
+.home_buttons {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+}
+
+#home_star {
+    background-color: transparent;
+    background-image: url('../images/socials_star.png');
+    width: 150px; 
+    height: 150px;
+    top: 0%;
+    left: 0%; 
+}
+
+.home_buttons:hover {
+    /* Twinkle Effect */
+    transform: scale(1.1);
+    animation: twinkle 1s alternate infinite;
+}
+
+/* Tooltip - Displaying the name of the button */
+.home_buttons:hover::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: 35%;
+    left: 105%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500; /* Using the light weight for a sleek look */
+    font-size: 18px;
+    letter-spacing: 2px; /* Spacing out the letters */
+}
