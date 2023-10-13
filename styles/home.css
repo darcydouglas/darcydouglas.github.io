@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    position: relative; /* Making body the reference for the absolute position of the button */
+    position: relative; 
     background-image: url('../images/home_background.png');
     background-size: cover;
     background-position: center center;
@@ -16,7 +16,7 @@ body, html {
     cursor: pointer;
     transition: transform 0.2s;
     position: absolute;
-    left: 10%; /* Place the stars on the left */
+    left: 10%; 
     background-image: url('../images/north_star.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,27 +24,20 @@ body, html {
     width: 250px;
     height: 250px;
     display: inline-block;
+    animation: strongTwinkle 2s infinite; /* Constant twinkle */
 }
 
 #projects {
     background-image: url('../images/alt_star.png');
     top: 60%;
-    left: 15%; /* Adjusted from 10% to 15% */
-    animation: twinkle 3s forwards; /* Play the twinkle effect once upon page load */
-}
-
-#projects:hover {
-    animation: twinkle 1s alternate infinite;
+    left: 15%; 
+    animation-delay: 1.3s;
 }
 
 #my_north_star {
     top: 10%;
-    left: 15%; /* Adjusted from 10% to 15% */
-    animation: twinkle 3s forwards; /* Play the twinkle effect once upon page load */
-}
-
-#my_north_star:hover {
-    animation: twinkle 1s alternate infinite;
+    left: 15%; 
+    animation-delay: 1.5s; /* 0.5s delay */
 }
 
 #resources {
@@ -52,12 +45,8 @@ body, html {
     width: 200px; 
     height: 200px;
     top: 30%;
-    left: 25%; /* Adjusted from 20% to 25% */
-    animation: twinkle 3s forwards; /* Play the twinkle effect once upon page load */
-}
-
-#resources:hover {
-    animation: twinkle 1s alternate infinite;
+    left: 25%; 
+    animation-delay: 1.1s; /* 1s delay */
 }
 
 #essays {
@@ -65,12 +54,8 @@ body, html {
     width: 220px; 
     height: 220px;
     top: 35%;
-    left: 5%; /* Adjusted from 0% to 5% */
-    animation: twinkle 3s forwards; /* Play the twinkle effect once upon page load */
-}
-
-#essays:hover {
-    animation: twinkle 1s alternate infinite;
+    left: 5%; 
+    animation-delay: 1.4s; /* 1.5s delay */
 }
 
 #x-twitter {
@@ -78,7 +63,8 @@ body, html {
     width: 150px; 
     height: 150px;
     top: 50%; 
-    left: 23%; /* Adjusted from 17.5% to 22.5% */
+    left: 23%; 
+    animation-delay: 1.8s; /* 2s delay */
 }
 
 #linkedin {
@@ -86,7 +72,8 @@ body, html {
     width: 150px; 
     height: 150px;
     top: 58%; 
-    left: 33%; /* Adjusted from 17.5% to 22.5% */
+    left: 33%; 
+    animation-delay: 2s; /* 2.5s delay */
 }
 
 #github {
@@ -94,18 +81,16 @@ body, html {
     width: 150px; 
     height: 150px;
     top: 66%; 
-    left: 43%; /* Adjusted from 17.5% to 22.5% */
+    left: 43%; 
+    animation-delay: 1.2s; /* 3s delay */
 }
-
 
 /* Twinkle and Tooltip effects remain the same for all stars */
 .southern_cross_buttons:hover {
-    /* Twinkle Effect */
     transform: scale(1.1);
     animation: twinkle 1s alternate infinite;
 }
 
-/* Tooltip - Displaying the name of the button */
 .southern_cross_buttons:hover::after {
     content: attr(aria-label);
     position: absolute;
@@ -118,9 +103,9 @@ body, html {
     border-radius: 5px;
     white-space: nowrap;
     font-family: 'Poppins', sans-serif;
-    font-weight: 500; /* Using the light weight for a sleek look */
+    font-weight: 500;
     font-size: 18px;
-    letter-spacing: 2px; /* Spacing out the letters */
+    letter-spacing: 2px;
 }
 
 /* Styling for the "About Me" button */
@@ -130,37 +115,33 @@ body, html {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 600px;  /* Adjust width and height based on the size of your image */
+    width: 600px;  
     height: 600px;
     border: none;
     cursor: pointer;
     transition: filter 0.3s;
-    position: absolute;  /* Positions the button relative to the nearest positioned ancestor (in this case, the body) */
-    right: 20%;            /* Aligns the button to the right side */
-    top: 40%;            /* Centers the button vertically */
-    transform: translateY(-50%); /* Adjusts the vertical centering */
+    position: absolute;  
+    right: 20%;            
+    top: 40%;            
+    transform: translateY(-50%); 
 }
 
-/* Make the image reactive upon hover by darkening it */
 .about_me_button:hover {
-    background-color: transparent; 
     filter: brightness(0.7);
 }
 
-/* Display the "About Me" text on hover */
 .about_me_button:hover::after {
     content: "About Me";
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);  /* Centers the text */
-    color: white;  /* Text color */
+    transform: translate(-50%, -50%);  
+    color: white;  
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     font-weight: 500; 
 }
 
-/* Animation - Subtle Twinkle Effect */
 @keyframes twinkle {
     0%   { opacity: 1; transform: scale(1); }
     25%  { opacity: 0.8; transform: scale(1.02); }
@@ -169,4 +150,10 @@ body, html {
     100% { opacity: 1; transform: scale(1); }
 }
 
-
+@keyframes strongTwinkle { 
+    0%   { opacity: 1; transform: scale(1); }
+    25%  { opacity: 0.7; transform: scale(1.03); } /* Adjusted opacity to 0.7 and scale to 1.03 */
+    50%  { opacity: 0.9; transform: scale(1.06); } /* Adjusted scale to 1.06 */
+    75%  { opacity: 0.7; transform: scale(1.03); } /* Adjusted opacity to 0.7 and scale to 1.03 */
+    100% { opacity: 1; transform: scale(1); }
+}
